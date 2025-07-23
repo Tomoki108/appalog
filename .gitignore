@@ -1,0 +1,30 @@
+# Gradle関連
+.gradle
+build/
+!gradle-wrapper.jar
+
+# IDE関連
+.idea
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+
+# ローカル設定
+local.properties
+*.log
+logs/
+
+# システムファイル
+.DS_Store
+Thumbs.db
+
+# 依存関係キャッシュ
+**/target/
+**/out/
+**/bin/
+
+# テストレポート
+**/test-results/
+**/reports/
