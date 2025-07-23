@@ -15,3 +15,23 @@
 - Cache: Redis
 - Message Queue: Apache Kafka
 - Container: Kubernetes, Docker
+
+## サービス構成
+
+- `services/logger`: アパレル購入ログ管理サービス
+  - ログの受付・保存
+  - Kafka へのイベント発行
+- `services/log-aggregator`: 購入データ集計サービス
+  - Kafka からのイベント消費
+  - 集計処理の実行
+  - Redis へのキャッシュ保存
+
+## ディレクトリ構造
+
+```
+appalog/
+├── services/
+│   ├── logger/            # ログ管理サービス
+│   └── log-aggregator/    # 集計サービス
+└── README.md
+```
