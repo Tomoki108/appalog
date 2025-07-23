@@ -8,13 +8,13 @@
         "fwcd.kotlin",
         "vscjava.vscode-gradle",
         "redhat.java"
-      ]
+      ],
+      "settings": {
+        "java.home": "/usr/lib/jvm/java-17-openjdk",
+        "java.jdt.ls.java.home": "/usr/lib/jvm/java-17-openjdk"
+      }
     }
   },
   "forwardPorts": [8080],
-  "postCreateCommand": "gradle wrapper",
-  "settings": {
-    "java.home": "/usr/lib/jvm/java-17-openjdk",
-    "java.jdt.ls.java.home": "/usr/lib/jvm/java-17-openjdk"
-  }
+  "postCreateCommand": "gradle wrapper"
 }
