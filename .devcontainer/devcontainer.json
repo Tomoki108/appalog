@@ -1,0 +1,20 @@
+{
+  "name": "Logger API Dev Container",
+  "dockerFile": "Dockerfile",
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "fwcd.kotlin",
+        "vscjava.vscode-gradle",
+        "redhat.java"
+      ]
+    }
+  },
+  "forwardPorts": [8080],
+  "postCreateCommand": "gradle wrapper",
+  "settings": {
+    "java.home": "/usr/lib/jvm/java-17-openjdk",
+    "java.jdt.ls.java.home": "/usr/lib/jvm/java-17-openjdk"
+  }
+}
