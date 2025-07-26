@@ -1,11 +1,13 @@
-FROM mcr.microsoft.com/devcontainers/java:17
+FROM eclipse-temurin:17-jdk-jammy
 
-# Install Gradle
-RUN apt-get update && apt-get install -y gradle
+# Install Kotlin compiler directly
+RUN apt-get update && apt-get install -y \
+    wget \
+    unzip \
+    && wget https://github.com/JetBrains/kotlin/releases/download/v1.9.0/kotlin-compiler-1.9.0.zip \
+    && unzip kotlin-compiler-1.9.0.zip -d /usr/local \
+    && rm kotlin-compiler-1.9.0.zip \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install Kotlin compiler
-RUN curl -s https://get.sdkman.io | bash \
-    && bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && sdk install kotlin"
-
-# Clean up
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+ENV PATH="/usr/local/kotlinc/bin:${PATH}"
