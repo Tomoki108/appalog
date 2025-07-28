@@ -1,11 +1,17 @@
 package com.appalog.logger
 
-import kotlinx.coroutines.runBlocking
+import io.ktor.server.application.*
+import io.ktor.server.engine.*
+import io.ktor.server.netty.*
+import io.ktor.server.response.*
+import io.ktor.server.routing.*
 
-fun main() = runBlocking {
-    println("Logger application started")
-    while (true) {
-        // Keep application running
-        kotlinx.coroutines.delay(Long.MAX_VALUE)
-    }
+fun main() {
+    embeddedServer(Netty, port = 8080) {
+        routing {
+            get("/") {
+                call.respondText("Hello World!")
+            }
+        }
+    }.start(wait = true)
 }
