@@ -7,7 +7,8 @@
     "vscode": {
       "extensions": [
         "fwcd.kotlin",
-        "vscjava.vscode-gradle"
+        "vscjava.vscode-gradle",
+        "saoudrizwan.claude-dev"
       ]
     }
   }
