@@ -15,4 +15,5 @@ RUN apt-get update && apt-get install -y wget unzip && \
 COPY . .
 
 # アプリケーションのビルドと実行
-CMD ["./gradlew", "run"]
+CMD ["bash", "-c", "./gradlew run -Pio.ktor.development=true"]
+

@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   logger:
     build:
@@ -11,3 +9,10 @@ services:
       - ./services/logger:/app
       - ~/.gradle:/root/.gradle
     working_dir: /app
+    environment:
+      - JAVA_TOOL_OPTIONS=-Dio.ktor.development=true
+    command: >
+      bash -c "
+        ./gradlew -t build -x test &      # 継続的ビルド
+        ./gradlew run -Pio.ktor.development=true
+      "
