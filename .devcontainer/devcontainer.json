@@ -1,6 +1,8 @@
 {
   "name": "Kotlin Dev Container",
-  "dockerFile": "Dockerfile",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "logger",
+  "runServices": ["logger"],
   "forwardPorts": [8080],
   "postCreateCommand": "gradle wrapper",
   "customizations": {
