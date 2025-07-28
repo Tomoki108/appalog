@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  logger:
+    build:
+      context: ./services/logger
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./services/logger:/app
+      - ~/.gradle:/root/.gradle
+    working_dir: /app

@@ -1,6 +1,11 @@
 package com.appalog.logger
 
-fun main() {
+import kotlinx.coroutines.runBlocking
+
+fun main() = runBlocking {
     println("Logger application started")
-    // TODO: Implement logger functionality
+    while (true) {
+        // Keep application running
+        kotlinx.coroutines.delay(Long.MAX_VALUE)
+    }
 }
